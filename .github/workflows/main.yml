@@ -28,5 +28,12 @@ jobs:
         with:
           ruby-version: ${{ matrix.ruby }}
           bundler-cache: true
-      - name: Run the default task
-        run: bundle exec rake
+      - name: Run the tests
+        run: bundle exec ruby -Itest test/mac_test.rb
+      - name: Keep Simplecov reports from failed system tests
+        uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: coverage-report
+          path: coverage
+          if-no-files-found: ignore

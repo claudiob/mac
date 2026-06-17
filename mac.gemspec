@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |spec|
   spec.name = 'mac'
-  spec.version = '1.0.0'
+  spec.version = '1.0.1'
   spec.authors = ['claudiob']
   spec.email = ['claudiob@users.noreply.github.com']
 
@@ -28,5 +28,9 @@ Gem::Specification.new do |spec|
   spec.executables = spec.files.grep(%r{\Aexe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
 
+  spec.add_dependency 'base64'
+  spec.add_dependency 'openssl'
   spec.add_dependency 'rack'
+  spec.add_development_dependency 'minitest'
+  spec.add_development_dependency 'simplecov'
 end

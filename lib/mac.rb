@@ -1,3 +1,7 @@
+require 'base64'
+require 'openssl'
+require 'rack'
+
 # Provides methods to sign and verify timestamped messages with HMAC SHA256.
 class Mac
   # Sets up a message to be signed/verified with a secret.
