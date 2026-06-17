@@ -16,3 +16,7 @@ Verify a signed message:
 mac = Mac.new message:, secret:
 mac.signed? signature:, timestamp: # true
 ```
+
+## Tests
+
+Run `bundle exec ruby -Itest test/mac_test.rb`
